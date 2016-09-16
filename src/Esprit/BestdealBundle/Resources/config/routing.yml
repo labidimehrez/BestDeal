@@ -1,0 +1,23 @@
+esprit_bestdeal_homepage:
+    pattern:  /
+    defaults: { _controller: EspritBestdealBundle:Default:index }
+    
+esprit_bestdeal_produit:
+    pattern:  /produit/{id}
+    defaults: { _controller: EspritBestdealBundle:Default:aficherproduit }
+    
+
+esprit_bestdeal_comment_send:
+    pattern:  /sendcomment/{id}
+    defaults: { _controller: EspritBestdealBundle:Default:sendcomment }
+    
+esprit_bestdeal_recherche:
+    pattern:  /recherche
+    defaults: { _controller: EspritBestdealBundle:Default:recherche }
+    
+esprit_bestdeal_commande:
+    pattern:  /deal/{id}/commande
+    defaults: { _controller: EspritBestdealBundle:Default:commande }    
+
+    
+ 

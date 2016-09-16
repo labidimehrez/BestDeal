@@ -1,0 +1,52 @@
+{% extends 'EspritBestdealBundle::layout.html.twig' %}
+
+
+{% block content %}
+
+
+<div class="main_content">
+			<div class="container main">
+				<div class="row">
+				
+					<div class="span9 comment_area">
+					<h2 class="title-wrap">
+						Contact Informaiton
+					</h2>
+					<div class="line"></div>
+					<div class="comment_contentp">	
+						<p>Mauris dapibus quam id turpis dignissim rutrum. Phasellus placerat nunc in nulla pretium pellentesque. Aliquam volutpat. In nec enim dui, in hendrerit enim. Vestibulum ante ipsum primis in faucibus </p>
+					</div>	
+					<div id="commentform">
+						<p class="error wrong_name">{{form_errors(form)}}</p>
+						
+						<form method="post"  action="{{path('esprit_bestdeal_commande', {'id':id})}}">
+							<p>{{ form_widget(form.nom)}}
+							<label><small>Nom<strong>*</strong></small></label></p>
+                                                         
+                                                        <p>{{ form_widget(form.prenom)}}
+							<label><small>Prénom<strong>*</strong></small></label></p>
+                                                        
+							<p>{{ form_widget(form.email)}}
+							<label><small>Email<strong>*</strong></small></label></p>
+							
+							<p>{{ form_widget(form.tel)}}
+							<label><small>Tèl</small></label></p>
+                                                        
+                                                        <p>{{ form_widget(form.commentaire)}}
+							<label><small>Commentaire<strong>*</strong></small></label></p>
+
+							{{ form_widget(form._token)}}
+							<p><input type="submit" name="submitButton" class="submitbutton"  value="Submit" /></p>
+						</form>
+						
+						
+					</div>
+				</div>
+				
+					
+				
+				</div>
+			</div>
+		</div>
+
+{% endblock%}

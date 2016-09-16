@@ -1,0 +1,9 @@
+<form method="POST"  action="{{path('esprit_bestdeal_comment_send',{id:''~id})}}">
+        <p>{{ form_widget(form.nom)}}
+        <label><small>Name</small></label></p>
+
+        <p>{{ form_widget(form.commentaire)}}</p>
+        {{form_widget(form._token)}}
+        <input type="submit" name="submitButton" class="submitbutton" id="contact-submit" value="Add a comment">
+        
+</form>

@@ -1,0 +1,93 @@
+{% extends 'EspritBestdealBundle::layout.html.twig' %}
+
+
+{% block content %}
+<div class="main_content">
+
+			<div class="container main" id="main-slide">
+				<div id="wrapper">
+					<div class="slide-content">
+						<div class="bounce-slider" id="first">
+							<ul>
+								<li data-slide-number="1" style="z-index: 0; opacity: 100;">
+									<p class="bounce-desc right-side bounce-to-right" style="opacity: 0;"><span>New Modern Dress <br> Women Summer Collection</span></p>
+									<img src="{{ asset ('bundles/espritbestdeal/images/slides/slide1.png')}}" alt="image 1">
+								</li>
+								<li data-slide-number="2" style="z-index: 0; opacity: 100;">
+									<p class="bounce-desc left-side bounce-to-left" style="opacity: 0;"><span>New Modern Dress <br> Women Summer Collection</span></p>
+									<img src="{{ asset ('bundles/espritbestdeal/images/slides/slide2.png')}}" alt="image 2">
+								</li>
+								<li data-slide-number="3" style="z-index: 2; opacity: 100;">
+									<p class="bounce-desc left-side bounce-from-left" style="opacity: 0;"><span>New Modern Dress <br> Women Summer Collection</span></p>
+									<img src="{{ asset ('bundles/espritbestdeal/images/slides/slide3.png')}}" alt="image 2">
+								</li>
+							</ul>
+							<span class="next bounce-nav"></span>	
+							<span class="prev bounce-nav"></span>
+						<ol class="bounce-bottom-buttons"><li data-goto-slide="1" class="gradient">1</li><li data-goto-slide="2" class="gradient">2</li><li data-goto-slide="3" class="gradient active">3</li></ol></div>
+					</div>
+				</div>	
+
+			</div>
+			<div class="container main">
+						
+				
+			</div>
+			<div class="container main" id="first-carousel-slide">
+                            {% for deal in deals %}
+				<div class="row list_work">
+					<h2 class="title-wrap">
+                                            
+                                            
+						<span>{{deal.nom}}</span>
+					</h2>
+                                        
+                                        <div class="newE-product-cart_like">
+                                            <div class="new-product-cart_like" style="float: right;margin-right: 164px;">
+												<div class="new-product-cart" style="background-color: green;margin-right: 10px;">
+                                                                                                    <a href="{{path('esprit_bestdeal_commande', {'id':deal.id})}}"><img alt="" src="{{ asset ('bundles/espritbestdeal/images/new-product/shoping-info/cart-image.png')}}"></a></div>
+												<div class="new-product-like"><a href="#"><img alt="" src="{{ asset ('bundles/espritbestdeal/images/new-product/shoping-info/like-img.png')}}"></a></div>
+											</div>
+										</div>
+					<div class="line"></div>
+					<div class=" jcarousel-skin-tango"><div class="jcarousel-container jcarousel-container-horizontal" style="position: relative; display: block;"><div class="jcarousel-clip jcarousel-clip-horizontal" style="position: relative;"><ul id="mycarousel" class="item da-thumbs jcarousel-list jcarousel-list-horizontal" style="overflow: hidden; position: relative; top: 0px; margin: 0px; padding: 0px; left: 0px; width: 2012px;">
+						{% for produit in deal.produits%}
+                                                        <li class="span3 new-product jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal" jcarouselindex="1" style="float: left; list-style: none;"> 
+							<div class="new-product-image">
+								
+								<a href="{{url('esprit_bestdeal_produit',{id:''~produit.id})}}"><img src="{{ asset ('upload/'~produit.image~'')}}" alt=""></a>
+							</div>	
+							<div class="new-product-info">	
+								<div>
+									<div class="new-product-price">{{produit.prix}} DT</div>
+									<div class="new-product-bg">
+										
+										<div class="new-product-details"><a href="{{url('esprit_bestdeal_produit',{id:''~produit.id})}}">Details</a></div>
+									</div>			
+								</div>
+							</div>
+							<div class="new-product-content">
+								<div class="new-product-title">
+									<a href="#"><p>{{produit.nom}}</p></a>
+								</div>
+								<div class="new-product-content">
+									<p>{{produit.description}}</p>
+								</div>
+							</div>
+						</li>
+                                                
+                                                {% endfor%}
+											
+					</ul></div><div class="jcarousel-prev jcarousel-prev-horizontal jcarousel-prev-disabled jcarousel-prev-disabled-horizontal" disabled="disabled" style="display: block;"></div><div class="jcarousel-next jcarousel-next-horizontal" style="display: block;"></div></div></div>
+				</div>	
+					{% endfor%}	
+					
+			</div>	
+			
+
+			<div class="container main" id="second-carousel-slide">
+				
+			</div>	
+		</div>
+
+{% endblock%}

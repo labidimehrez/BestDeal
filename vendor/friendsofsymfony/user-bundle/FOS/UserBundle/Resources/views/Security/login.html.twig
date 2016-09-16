@@ -1,0 +1,62 @@
+{% extends "EspritBestdealBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+{% if error %}
+    <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+{% endif %}
+
+
+    <div class="main_content">
+			<div class="container main">
+				<div class="row">
+					<div class="span9 checkout_area">
+						<h2 class="title-wrap">
+							Checkout Informaiton
+						</h2>
+						<div class="line"></div>
+							<div id="log_in_info">
+								<h3>Step 1: <span>Checkout Information</span></h3>
+								<div class="row">
+									<div class="checkout_info log_in_content span9">
+									{#	 <div class="span4 new_customer">
+											<h2>New Customer</h2>
+											<div class="customer_select">
+												<p>Mauris mauris ante</p>
+												<form>
+													<input type="radio" name="account" value="register"><div class="account_name">Register</div>
+													<input type="radio" name="account" value="guest"><div class="account_name">Guest</div>
+												</form>
+											</div>	
+											<p>Mauris dapibus quam id turpis dignissim rutrum. Phasellus placerat nunc.</p>
+											<button class="register">Continue</button>
+										</div>#}
+										<div class="span4 returning_customer">
+											<h2>Returning Customer</h2>
+                                                                                        <div class="customer_select" style="">
+												<p>I'm a returning customer</p>
+												<form action="{{ path("fos_user_security_check") }}" method="post">
+                                                                                                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+                                                                                                    <label for="username" style="width: 138px"> <small>{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</small></label>
+                                                                                                    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="width" />
+
+                                                                                                    <label for="password" style="width: 138px"><small>{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</small></label>
+                                                                                                    <input type="password" id="password" name="_password" required="required" class="width" />
+                                                                                                    <br>
+                                                                                                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                                                                                                    <label for="remember_me" style="width: 138px">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+                                                                                                    <br>
+                                                                                                    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" class="register"/>
+                                                                                                </form>
+											</div>	
+											
+										</div>
+									</div>
+								</div>
+							</div>	
+					</div>
+					
+				</div>
+			</div>
+		</div>
+{% endblock fos_user_content %}

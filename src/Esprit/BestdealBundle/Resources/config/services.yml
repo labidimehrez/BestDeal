@@ -1,0 +1,7 @@
+parameters:
+#    esprit_bestdeal.example.class: Esprit\BestdealBundle\Example
+
+services:
+#    esprit_bestdeal.example:
+#        class: %esprit_bestdeal.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
